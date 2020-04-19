@@ -1,0 +1,1 @@
+E:\.net\warehouse\warehouse\warehouse\bin\Debug\warehouse.exe.config
