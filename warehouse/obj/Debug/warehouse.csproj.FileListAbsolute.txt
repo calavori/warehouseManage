@@ -1,1 +1,11 @@
 E:\.net\warehouse\warehouse\warehouse\bin\Debug\warehouse.exe.config
+D:\.Net\warehouseManage\warehouse\bin\Debug\warehouse.exe.config
+D:\.Net\warehouseManage\warehouse\bin\Debug\warehouse.exe
+D:\.Net\warehouseManage\warehouse\bin\Debug\warehouse.pdb
+D:\.Net\warehouseManage\warehouse\obj\Debug\warehouse.csprojResolveAssemblyReference.cache
+D:\.Net\warehouseManage\warehouse\obj\Debug\warehouse.Kho.resources
+D:\.Net\warehouseManage\warehouse\obj\Debug\warehouse.Properties.Resources.resources
+D:\.Net\warehouseManage\warehouse\obj\Debug\warehouse.csproj.GenerateResource.Cache
+D:\.Net\warehouseManage\warehouse\obj\Debug\warehouse.exe
+D:\.Net\warehouseManage\warehouse\obj\Debug\warehouse.pdb
+D:\.Net\warehouseManage\warehouse\obj\Debug\warehouse.sources.resources
