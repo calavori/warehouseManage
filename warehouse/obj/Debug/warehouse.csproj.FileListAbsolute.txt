@@ -9,3 +9,12 @@ D:\.Net\warehouseManage\warehouse\obj\Debug\warehouse.csproj.GenerateResource.Ca
 D:\.Net\warehouseManage\warehouse\obj\Debug\warehouse.exe
 D:\.Net\warehouseManage\warehouse\obj\Debug\warehouse.pdb
 D:\.Net\warehouseManage\warehouse\obj\Debug\warehouse.sources.resources
+E:\.net\warehouse\warehouse\warehouse\obj\Debug\warehouse.exe
+E:\.net\warehouse\warehouse\warehouse\obj\Debug\warehouse.pdb
+E:\.net\warehouse\warehouse\warehouse\bin\Debug\warehouse.exe
+E:\.net\warehouse\warehouse\warehouse\bin\Debug\warehouse.pdb
+E:\.net\warehouse\warehouse\warehouse\obj\Debug\warehouse.csprojResolveAssemblyReference.cache
+E:\.net\warehouse\warehouse\warehouse\obj\Debug\warehouse.Kho.resources
+E:\.net\warehouse\warehouse\warehouse\obj\Debug\warehouse.Properties.Resources.resources
+E:\.net\warehouse\warehouse\warehouse\obj\Debug\warehouse.sources.resources
+E:\.net\warehouse\warehouse\warehouse\obj\Debug\warehouse.csproj.GenerateResource.Cache
