@@ -69,13 +69,13 @@ insert into import values (2,1,'2020-4-20');
 select * from import;
 
 
-insert into import_detail values (3, 1, 20);
-insert into import_detail values (3, 2, 40);
-insert into import_detail values (4, 7, 10);
-insert into import_detail values (4, 2, 10);
-insert into import_detail values (4, 3, 10);
-insert into import_detail values (5, 1, 90);
-insert into import_detail values (5, 7, 60);
+insert into import_detail values (1, 2, 20);
+insert into import_detail values (1, 3, 40);
+insert into import_detail values (2, 1, 10);
+insert into import_detail values (2, 2, 10);
+insert into import_detail values (2, 4, 10);
+insert into import_detail values (1, 1, 90);
+insert into import_detail values (1, 4, 60);
 select * from import_detail;
 
 
