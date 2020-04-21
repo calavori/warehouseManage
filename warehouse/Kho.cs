@@ -15,38 +15,35 @@ namespace warehouse
         public Kho()
         {
             InitializeComponent();
+            dgvlist.DataSource = getList().Tables[0];
         }
-        SqlConnection con = new SqlConnection(@"Data Source=DESKTOP-DV7BHAI\SQLEXPRESS;Initial Catalog=kho;Integrated Security=True");
-        class ConnectionString
-        {
-            public static string connectionString = (@"Data Source=DESKTOP-DV7BHAI\SQLEXPRESS;Initial Catalog=kho;Integrated Security=True");
-        }
-        DataSet Getlist()
+  
+        DataSet getList()
         {
             DataSet data = new DataSet();
             string query = "Select * from warehouse";
-            using (SqlConnection connection = new SqlConnection(ConnectionString.connectionString))
+            using (Connection.conn)
             {
-                connection.Open();
-                SqlDataAdapter adapter = new SqlDataAdapter(query, connection);
+                Connection.OpenConnection();
+                SqlDataAdapter adapter = new SqlDataAdapter(query, Connection.conn);
                 adapter.Fill(data);
-                connection.Close();
+                Connection.CloseConnection();
             }
             return data;
         }
 
         private void btnlist_Click(object sender, EventArgs e)
         {
-            dgvlist.DataSource = Getlist().Tables[0];
+            dgvlist.DataSource = getList().Tables[0];
         }
 
         private void btnadd_Click(object sender, EventArgs e)
         {
-            con.Open();
+            Connection.OpenConnection();
             try
             {
 
-                SqlCommand cmd = new SqlCommand("SET IDENTITY_INSERT warehouse ON Insert into warehouse(w_id,w_adress) values(N'" + txtid.Text + "',N'" + txtaddress.Text + "')", con);
+                SqlCommand cmd = new SqlCommand("Insert into warehouse values ('" + txtaddress.Text + "')", Connection.conn);
                 cmd.ExecuteNonQuery();
 
 
@@ -58,30 +55,38 @@ namespace warehouse
 
                 if (ex.Message.Contains("Cannot insert duplicate key in object"))
                 {
-                    SqlCommand cmd = new SqlCommand("SET IDENTITY_INSERT warehouse ON Update warehouse set w_adress ='" + txtaddress.Text + "' where w_id ='"+txtid.Text+"'", con);
+                    SqlCommand cmd = new SqlCommand("Update warehouse set address ='" + txtaddress.Text + "' where id ='"+txtid.Text+"'", Connection.conn);
                     cmd.ExecuteNonQuery();
-                    dgvlist.DataSource = Getlist().Tables[0];
+                    dgvlist.DataSource = getList().Tables[0];
                 }
                 else
                     MessageBox.Show(ex.Message);
             }
             finally
             {
-                con.Close();
+                Connection.CloseConnection();
+                dgvlist.DataSource = getList().Tables[0];
             }
         }
 
         private void btndelete_Click(object sender, EventArgs e)
         {
-            con.Open();
-            SqlCommand cmd = new SqlCommand("delete from warehouse where w_id='" + txtid.Text + "'and w_adress ='" + txtaddress.Text + "'", con);
+            Connection.OpenConnection();
+            SqlCommand cmd = new SqlCommand("delete from warehouse where id='" + txtid.Text + "'and address ='" + txtaddress.Text + "'", Connection.conn);
             cmd.ExecuteNonQuery();
-            con.Close();
+            Connection.CloseConnection();
+            dgvlist.DataSource = getList().Tables[0];
         }
 
-        private void dgvlist_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        private void dgvlist_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-
+            if (e.RowIndex > -1)
+            {
+                DataGridViewRow row = new DataGridViewRow();
+                row = dgvlist.Rows[e.RowIndex];
+                txtid.Text = row.Cells[0].Value.ToString();
+                txtaddress.Text = row.Cells[1].Value.ToString();
+            }
         }
     }
 }

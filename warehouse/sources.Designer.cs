@@ -28,11 +28,15 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(sources));
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(sources));
             this.dgvlist = new System.Windows.Forms.DataGridView();
+            this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.name = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.phone = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.address = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnlist = new System.Windows.Forms.Button();
             this.btnadd = new System.Windows.Forms.Button();
             this.btndelete = new System.Windows.Forms.Button();
@@ -44,24 +48,22 @@
             this.txtname = new System.Windows.Forms.TextBox();
             this.txtphone = new System.Windows.Forms.TextBox();
             this.txtaddress = new System.Windows.Forms.TextBox();
-            this.s_id = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.s_name = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.s_phone = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.s_adress = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvlist)).BeginInit();
             this.SuspendLayout();
             // 
             // dgvlist
             // 
+            this.dgvlist.AllowUserToAddRows = false;
+            this.dgvlist.AllowUserToDeleteRows = false;
             this.dgvlist.BackgroundColor = System.Drawing.Color.Teal;
             this.dgvlist.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.dgvlist.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.Sunken;
             this.dgvlist.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvlist.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.s_id,
-            this.s_name,
-            this.s_phone,
-            this.s_adress});
+            this.id,
+            this.name,
+            this.phone,
+            this.address});
             this.dgvlist.GridColor = System.Drawing.Color.Teal;
             this.dgvlist.Location = new System.Drawing.Point(12, 110);
             this.dgvlist.Name = "dgvlist";
@@ -69,6 +71,44 @@
             this.dgvlist.RowTemplate.Height = 24;
             this.dgvlist.Size = new System.Drawing.Size(631, 286);
             this.dgvlist.TabIndex = 0;
+            this.dgvlist.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvlist_CellClick);
+            // 
+            // id
+            // 
+            this.id.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.id.DataPropertyName = "id";
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.HotTrack;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.White;
+            this.id.DefaultCellStyle = dataGridViewCellStyle1;
+            this.id.HeaderText = "ID";
+            this.id.Name = "id";
+            // 
+            // name
+            // 
+            this.name.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.name.DataPropertyName = "name";
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.White;
+            this.name.DefaultCellStyle = dataGridViewCellStyle2;
+            this.name.HeaderText = "Name";
+            this.name.Name = "name";
+            // 
+            // phone
+            // 
+            this.phone.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.phone.DataPropertyName = "phone";
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
+            this.phone.DefaultCellStyle = dataGridViewCellStyle3;
+            this.phone.HeaderText = "Phone";
+            this.phone.Name = "phone";
+            // 
+            // address
+            // 
+            this.address.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.address.DataPropertyName = "address";
+            this.address.HeaderText = "Address";
+            this.address.Name = "address";
             // 
             // btnlist
             // 
@@ -187,43 +227,6 @@
             this.txtaddress.Size = new System.Drawing.Size(206, 22);
             this.txtaddress.TabIndex = 11;
             // 
-            // s_id
-            // 
-            this.s_id.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.s_id.DataPropertyName = "s_id";
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.HotTrack;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.White;
-            this.s_id.DefaultCellStyle = dataGridViewCellStyle1;
-            this.s_id.HeaderText = "Mã số";
-            this.s_id.Name = "s_id";
-            // 
-            // s_name
-            // 
-            this.s_name.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.s_name.DataPropertyName = "s_name";
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.White;
-            this.s_name.DefaultCellStyle = dataGridViewCellStyle2;
-            this.s_name.HeaderText = "Tên";
-            this.s_name.Name = "s_name";
-            // 
-            // s_phone
-            // 
-            this.s_phone.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.s_phone.DataPropertyName = "s_phone";
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
-            this.s_phone.DefaultCellStyle = dataGridViewCellStyle3;
-            this.s_phone.HeaderText = "Số điện thoại";
-            this.s_phone.Name = "s_phone";
-            // 
-            // s_adress
-            // 
-            this.s_adress.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.s_adress.DataPropertyName = "s_adress";
-            this.s_adress.HeaderText = "Địa chỉ";
-            this.s_adress.Name = "s_adress";
-            // 
             // sources
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -263,9 +266,9 @@
         private System.Windows.Forms.TextBox txtname;
         private System.Windows.Forms.TextBox txtphone;
         private System.Windows.Forms.TextBox txtaddress;
-        private System.Windows.Forms.DataGridViewTextBoxColumn s_id;
-        private System.Windows.Forms.DataGridViewTextBoxColumn s_name;
-        private System.Windows.Forms.DataGridViewTextBoxColumn s_phone;
-        private System.Windows.Forms.DataGridViewTextBoxColumn s_adress;
+        private System.Windows.Forms.DataGridViewTextBoxColumn id;
+        private System.Windows.Forms.DataGridViewTextBoxColumn name;
+        private System.Windows.Forms.DataGridViewTextBoxColumn phone;
+        private System.Windows.Forms.DataGridViewTextBoxColumn address;
     }
 }

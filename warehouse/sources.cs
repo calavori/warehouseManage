@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
+
 namespace warehouse
 {
     public partial class sources : Form
@@ -15,22 +16,19 @@ namespace warehouse
         public sources()
         {
             InitializeComponent();
+            dgvlist.DataSource = getList().Tables[0];
         }
-        SqlConnection con = new SqlConnection(@"Data Source=DESKTOP-DV7BHAI\SQLEXPRESS;Initial Catalog=kho;Integrated Security=True");
-        class ConnectionString
-        {
-            public static string connectionString = (@"Data Source=DESKTOP-DV7BHAI\SQLEXPRESS;Initial Catalog=kho;Integrated Security=True");
-        }
-        DataSet Getlist()
+        
+        DataSet getList()
         {
             DataSet data = new DataSet();
-            string query = "Select * from Sources";
-            using (SqlConnection connection = new SqlConnection(ConnectionString.connectionString))
+            string query = "Select * from source";
+            using (Connection.conn)
             {
-                connection.Open();
-                SqlDataAdapter adapter = new SqlDataAdapter(query, connection);
+                Connection.OpenConnection();
+                SqlDataAdapter adapter = new SqlDataAdapter(query, Connection.conn);
                 adapter.Fill(data);
-                connection.Close();
+                Connection.CloseConnection();
             }
             return data;
         }
@@ -41,16 +39,16 @@ namespace warehouse
 
         private void btnlist_Click(object sender, EventArgs e)
         {
-            dgvlist.DataSource = Getlist().Tables[0];
+            dgvlist.DataSource = getList().Tables[0];
         }
 
         private void btnadd_Click(object sender, EventArgs e)
         {
-            con.Open();
+            Connection.OpenConnection();
             try
             {
 
-                SqlCommand cmd = new SqlCommand("SET IDENTITY_INSERT Sources ON Insert into Sources(s_id,s_name,s_phone,s_adress) values(N'" + txtid.Text + "',N'" + txtname.Text + "',N'" + txtphone.Text + "', N'"+ txtaddress.Text +"')", con);
+                SqlCommand cmd = new SqlCommand("Insert into Source values('" + txtname.Text + "','" + txtphone.Text + "', '"+ txtaddress.Text +"')", Connection.conn);
                 cmd.ExecuteNonQuery();
 
 
@@ -62,25 +60,40 @@ namespace warehouse
 
                 if (ex.Message.Contains("Cannot insert duplicate key in object"))
                 {
-                    SqlCommand cmd = new SqlCommand("SET IDENTITY_INSERT Sources ON Update Sources set s_name =N'" + txtname.Text + "', s_phone =N'"+ txtphone.Text+"', s_adress =N'"+ txtaddress.Text +"' where s_id ='" + txtid.Text + "'", con);
+                    SqlCommand cmd = new SqlCommand("Update Sources set name ='" + txtname.Text + "', phone ='"+ txtphone.Text+"', address ='"+ txtaddress.Text +"' where id ='" + txtid.Text + "'", Connection.conn);
                     cmd.ExecuteNonQuery();
-                    dgvlist.DataSource = Getlist().Tables[0];
+                    dgvlist.DataSource = getList().Tables[0];
                 }
                 else
                     MessageBox.Show(ex.Message);
             }
             finally
             {
-                con.Close();
+                Connection.CloseConnection();
+                dgvlist.DataSource = getList().Tables[0];
             }
         }
 
         private void btndelete_Click(object sender, EventArgs e)
         {
-            con.Open();
-            SqlCommand cmd = new SqlCommand("delete  from Sources where s_id='" + txtid.Text + "'", con);
+            Connection.OpenConnection();
+            SqlCommand cmd = new SqlCommand("delete from Source where id='" + txtid.Text + "'", Connection.conn);
             cmd.ExecuteNonQuery();
-            con.Close();
+            Connection.CloseConnection();
+            dgvlist.DataSource = getList().Tables[0];
+        }
+
+        private void dgvlist_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex > -1)
+            {
+                DataGridViewRow row = new DataGridViewRow();
+                row = dgvlist.Rows[e.RowIndex];
+                txtid.Text = row.Cells[0].Value.ToString();
+                txtname.Text = row.Cells[1].Value.ToString();
+                txtphone.Text = row.Cells[2].Value.ToString();
+                txtaddress.Text = row.Cells[3].Value.ToString();
+            }
         }
     }
 }

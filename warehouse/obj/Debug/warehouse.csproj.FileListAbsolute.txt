@@ -18,3 +18,6 @@ E:\.net\warehouse\warehouse\warehouse\obj\Debug\warehouse.Kho.resources
 E:\.net\warehouse\warehouse\warehouse\obj\Debug\warehouse.Properties.Resources.resources
 E:\.net\warehouse\warehouse\warehouse\obj\Debug\warehouse.sources.resources
 E:\.net\warehouse\warehouse\warehouse\obj\Debug\warehouse.csproj.GenerateResource.Cache
+E:\.net\warehouse\warehouse\warehouse\obj\Debug\warehouse.Menu.resources
+E:\.net\warehouse\warehouse\warehouse\obj\Debug\warehouse.import.resources
+E:\.net\warehouse\warehouse\warehouse\obj\Debug\warehouse.ImportDetail.resources

@@ -32,6 +32,8 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Kho));
             this.dgvlist = new System.Windows.Forms.DataGridView();
+            this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.address = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnlist = new System.Windows.Forms.Button();
             this.btnadd = new System.Windows.Forms.Button();
             this.btndelete = new System.Windows.Forms.Button();
@@ -41,8 +43,6 @@
             this.label2 = new System.Windows.Forms.Label();
             this.khoDataSet = new warehouse.khoDataSet();
             this.khoDataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.w_id = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.w_adress = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvlist)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.khoDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.khoDataSetBindingSource)).BeginInit();
@@ -50,14 +50,16 @@
             // 
             // dgvlist
             // 
+            this.dgvlist.AllowUserToAddRows = false;
+            this.dgvlist.AllowUserToDeleteRows = false;
             this.dgvlist.BackgroundColor = System.Drawing.SystemColors.ScrollBar;
             this.dgvlist.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.dgvlist.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.Sunken;
             this.dgvlist.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Sunken;
             this.dgvlist.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvlist.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.w_id,
-            this.w_adress});
+            this.id,
+            this.address});
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.ActiveCaption;
             dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -73,7 +75,22 @@
             this.dgvlist.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
             this.dgvlist.Size = new System.Drawing.Size(659, 318);
             this.dgvlist.TabIndex = 0;
-            this.dgvlist.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvlist_CellContentClick);
+            this.dgvlist.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvlist_CellClick);
+            // 
+            // id
+            // 
+            this.id.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.id.DataPropertyName = "id";
+            this.id.HeaderText = "ID";
+            this.id.Name = "id";
+            this.id.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            // 
+            // address
+            // 
+            this.address.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.address.DataPropertyName = "address";
+            this.address.HeaderText = "Address";
+            this.address.Name = "address";
             // 
             // btnlist
             // 
@@ -159,21 +176,6 @@
             this.khoDataSetBindingSource.DataSource = this.khoDataSet;
             this.khoDataSetBindingSource.Position = 0;
             // 
-            // w_id
-            // 
-            this.w_id.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.w_id.DataPropertyName = "w_id";
-            this.w_id.HeaderText = "Mã kho";
-            this.w_id.Name = "w_id";
-            this.w_id.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            // 
-            // w_adress
-            // 
-            this.w_adress.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.w_adress.DataPropertyName = "w_adress";
-            this.w_adress.HeaderText = "Địa chỉ kho";
-            this.w_adress.Name = "w_adress";
-            // 
             // Kho
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -209,7 +211,7 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.BindingSource khoDataSetBindingSource;
         private khoDataSet khoDataSet;
-        private System.Windows.Forms.DataGridViewTextBoxColumn w_id;
-        private System.Windows.Forms.DataGridViewTextBoxColumn w_adress;
+        private System.Windows.Forms.DataGridViewTextBoxColumn id;
+        private System.Windows.Forms.DataGridViewTextBoxColumn address;
     }
 }
