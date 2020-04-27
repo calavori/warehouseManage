@@ -42,25 +42,22 @@ namespace warehouse
             Connection.OpenConnection();
             try
             {
-
-                SqlCommand cmd = new SqlCommand("Insert into warehouse values ('" + txtaddress.Text + "')", Connection.conn);
-                cmd.ExecuteNonQuery();
-
+                if (txtid.Text == "")
+                {
+                    SqlCommand cmd = new SqlCommand("Insert into warehouse values ('" + txtaddress.Text + "')", Connection.conn);
+                    cmd.ExecuteNonQuery();
+                }
+                else
+                {
+                    SqlCommand cmd = new SqlCommand("Update warehouse set address ='" + txtaddress.Text + "' where id ='" + txtid.Text + "'", Connection.conn);
+                    cmd.ExecuteNonQuery();
+                }
 
 
             }
             catch (Exception ex)
             {
-
-
-                if (ex.Message.Contains("Cannot insert duplicate key in object"))
-                {
-                    SqlCommand cmd = new SqlCommand("Update warehouse set address ='" + txtaddress.Text + "' where id ='"+txtid.Text+"'", Connection.conn);
-                    cmd.ExecuteNonQuery();
-                    dgvlist.DataSource = getList().Tables[0];
-                }
-                else
-                    MessageBox.Show(ex.Message);
+                MessageBox.Show(ex.Message);
             }
             finally
             {

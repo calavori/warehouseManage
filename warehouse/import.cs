@@ -38,40 +38,37 @@ namespace warehouse
             Connection.OpenConnection();
             try
             {
-
-                string str = "Insert into import values (@w_id, @s_id, @date)";
-                Connection.OpenConnection();
-                SqlCommand com = new SqlCommand(str, Connection.conn);
-
-                SqlParameter p1 = new SqlParameter("@w_id", SqlDbType.VarChar);
-                p1.Value = txtWId.Text;
-                SqlParameter p2 = new SqlParameter("@s_id", SqlDbType.VarChar);
-                p2.Value = txtSId.Text;
-                SqlParameter p3 = new SqlParameter("@date", SqlDbType.Date);
-                p3.Value = txtDate.Text;
-
-                com.Parameters.Add(p1);
-                com.Parameters.Add(p2);
-                com.Parameters.Add(p3);
-                com.ExecuteNonQuery();
-
-                string query = "Select max(id) from import";
-                using (Connection.conn)
+                if (txtIId.Text == "")
                 {
-                    SqlCommand cmd = new SqlCommand(query, Connection.conn);
-                    int i_id = (Int32)cmd.ExecuteScalar();
 
-                    ImportDetail importDetail = new ImportDetail(i_id.ToString());
-                    importDetail.ShowDialog();
+                    string str = "Insert into import values (@w_id, @s_id, @date)";
+                    Connection.OpenConnection();
+                    SqlCommand com = new SqlCommand(str, Connection.conn);
+
+                    SqlParameter p1 = new SqlParameter("@w_id", SqlDbType.VarChar);
+                    p1.Value = txtWId.Text;
+                    SqlParameter p2 = new SqlParameter("@s_id", SqlDbType.VarChar);
+                    p2.Value = txtSId.Text;
+                    SqlParameter p3 = new SqlParameter("@date", SqlDbType.Date);
+                    p3.Value = txtDate.Text;
+
+                    com.Parameters.Add(p1);
+                    com.Parameters.Add(p2);
+                    com.Parameters.Add(p3);
+                    com.ExecuteNonQuery();
+
+                    string query = "Select max(id) from import";
+                    using (Connection.conn)
+                    {
+                        SqlCommand cmd = new SqlCommand(query, Connection.conn);
+                        int i_id = (Int32)cmd.ExecuteScalar();
+
+                        ImportDetail importDetail = new ImportDetail(i_id.ToString());
+                        importDetail.ShowDialog();
+                    }
+
                 }
-
-
-            }
-            catch (Exception ex)
-            {
-
-
-                if (ex.Message.Contains("Cannot insert duplicate key in object"))
+                else
                 {
                     string str = "Update Import set w_id=@w_id, s_id=@s_id, date=@date where id=@i_id";
                     Connection.OpenConnection();
@@ -92,8 +89,10 @@ namespace warehouse
                     com.Parameters.Add(p4);
                     com.ExecuteNonQuery();
                 }
-                else
-                    MessageBox.Show(ex.Message);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
             }
             finally
             {
