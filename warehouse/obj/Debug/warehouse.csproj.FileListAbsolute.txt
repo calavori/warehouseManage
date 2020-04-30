@@ -21,3 +21,34 @@ E:\.net\warehouse\warehouse\warehouse\obj\Debug\warehouse.csproj.GenerateResourc
 E:\.net\warehouse\warehouse\warehouse\obj\Debug\warehouse.Menu.resources
 E:\.net\warehouse\warehouse\warehouse\obj\Debug\warehouse.import.resources
 E:\.net\warehouse\warehouse\warehouse\obj\Debug\warehouse.ImportDetail.resources
+D:\Saito\Projects\School\dotNET\warehouseManage\warehouse\bin\Debug\warehouse.exe.config
+D:\Saito\Projects\School\dotNET\warehouseManage\warehouse\bin\Debug\warehouse.exe
+D:\Saito\Projects\School\dotNET\warehouseManage\warehouse\bin\Debug\warehouse.pdb
+D:\Saito\Projects\School\dotNET\warehouseManage\warehouse\obj\Debug\warehouse.csprojAssemblyReference.cache
+D:\Saito\Projects\School\dotNET\warehouseManage\warehouse\obj\Debug\warehouse.Category.resources
+D:\Saito\Projects\School\dotNET\warehouseManage\warehouse\obj\Debug\warehouse.import.resources
+D:\Saito\Projects\School\dotNET\warehouseManage\warehouse\obj\Debug\warehouse.ImportDetail.resources
+D:\Saito\Projects\School\dotNET\warehouseManage\warehouse\obj\Debug\warehouse.Kho.resources
+D:\Saito\Projects\School\dotNET\warehouseManage\warehouse\obj\Debug\warehouse.Menu.resources
+D:\Saito\Projects\School\dotNET\warehouseManage\warehouse\obj\Debug\warehouse.Properties.Resources.resources
+D:\Saito\Projects\School\dotNET\warehouseManage\warehouse\obj\Debug\warehouse.sources.resources
+D:\Saito\Projects\School\dotNET\warehouseManage\warehouse\obj\Debug\warehouse.csproj.GenerateResource.cache
+D:\Saito\Projects\School\dotNET\warehouseManage\warehouse\obj\Debug\warehouse.csproj.CoreCompileInputs.cache
+D:\Saito\Projects\School\dotNET\warehouseManage\warehouse\obj\Debug\warehouse.exe
+D:\Saito\Projects\School\dotNET\warehouseManage\warehouse\obj\Debug\warehouse.pdb
+D:\Saito\Projects\School\dotNET\warehouseManage\warehouse\obj\Debug\warehouse.Product.resources
+E:\.net\New folder\warehouseManage\warehouse\bin\Debug\warehouse.exe.config
+E:\.net\New folder\warehouseManage\warehouse\obj\Debug\warehouse.exe
+E:\.net\New folder\warehouseManage\warehouse\obj\Debug\warehouse.pdb
+E:\.net\New folder\warehouseManage\warehouse\bin\Debug\warehouse.exe
+E:\.net\New folder\warehouseManage\warehouse\bin\Debug\warehouse.pdb
+E:\.net\New folder\warehouseManage\warehouse\obj\Debug\warehouse.csprojResolveAssemblyReference.cache
+E:\.net\New folder\warehouseManage\warehouse\obj\Debug\warehouse.Category.resources
+E:\.net\New folder\warehouseManage\warehouse\obj\Debug\warehouse.import.resources
+E:\.net\New folder\warehouseManage\warehouse\obj\Debug\warehouse.ImportDetail.resources
+E:\.net\New folder\warehouseManage\warehouse\obj\Debug\warehouse.Kho.resources
+E:\.net\New folder\warehouseManage\warehouse\obj\Debug\warehouse.Menu.resources
+E:\.net\New folder\warehouseManage\warehouse\obj\Debug\warehouse.Product.resources
+E:\.net\New folder\warehouseManage\warehouse\obj\Debug\warehouse.Properties.Resources.resources
+E:\.net\New folder\warehouseManage\warehouse\obj\Debug\warehouse.sources.resources
+E:\.net\New folder\warehouseManage\warehouse\obj\Debug\warehouse.csproj.GenerateResource.Cache

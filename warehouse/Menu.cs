@@ -34,5 +34,17 @@ namespace warehouse
             import i = new import();
             i.Show();
         }
+
+        private void btnCategory_Click(object sender, EventArgs e)
+        {
+            Category c = new Category();
+            c.Show();
+        }
+
+        private void btnProduct_Click(object sender, EventArgs e)
+        {
+            Product p = new Product();
+            p.Show();
+        }
     }
 }

@@ -18,7 +18,7 @@ namespace warehouse
             InitializeComponent();
             dgvlist.DataSource = getList().Tables[0];
         }
-        
+
         DataSet getList()
         {
             DataSet data = new DataSet();

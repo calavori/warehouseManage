@@ -17,6 +17,7 @@ namespace warehouse
         {
             InitializeComponent();
             dgvlist.DataSource = getList().Tables[0];
+            txtDate.Text = DateTime.Now.ToString("yyyy/M/d");
         }
 
         DataSet getList()
@@ -137,7 +138,7 @@ namespace warehouse
             }
         }
 
-       
+
 
         private void dgvlist_CellClick(object sender, DataGridViewCellEventArgs e)
         {
