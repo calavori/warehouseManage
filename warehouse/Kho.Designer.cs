@@ -68,12 +68,13 @@
             dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.dgvlist.DefaultCellStyle = dataGridViewCellStyle1;
-            this.dgvlist.Location = new System.Drawing.Point(25, 121);
+            this.dgvlist.Location = new System.Drawing.Point(19, 98);
+            this.dgvlist.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.dgvlist.Name = "dgvlist";
             this.dgvlist.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Sunken;
             this.dgvlist.RowTemplate.Height = 24;
             this.dgvlist.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
-            this.dgvlist.Size = new System.Drawing.Size(659, 318);
+            this.dgvlist.Size = new System.Drawing.Size(494, 258);
             this.dgvlist.TabIndex = 0;
             this.dgvlist.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvlist_CellClick);
             // 
@@ -97,9 +98,10 @@
             this.btnlist.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnlist.BackgroundImage")));
             this.btnlist.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.btnlist.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnlist.Location = new System.Drawing.Point(718, 153);
+            this.btnlist.Location = new System.Drawing.Point(538, 124);
+            this.btnlist.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnlist.Name = "btnlist";
-            this.btnlist.Size = new System.Drawing.Size(140, 63);
+            this.btnlist.Size = new System.Drawing.Size(105, 51);
             this.btnlist.TabIndex = 1;
             this.btnlist.UseVisualStyleBackColor = true;
             this.btnlist.Click += new System.EventHandler(this.btnlist_Click);
@@ -109,9 +111,10 @@
             this.btnadd.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnadd.BackgroundImage")));
             this.btnadd.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.btnadd.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnadd.Location = new System.Drawing.Point(718, 262);
+            this.btnadd.Location = new System.Drawing.Point(538, 213);
+            this.btnadd.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnadd.Name = "btnadd";
-            this.btnadd.Size = new System.Drawing.Size(140, 63);
+            this.btnadd.Size = new System.Drawing.Size(105, 51);
             this.btnadd.TabIndex = 2;
             this.btnadd.UseVisualStyleBackColor = true;
             this.btnadd.Click += new System.EventHandler(this.btnadd_Click);
@@ -121,25 +124,28 @@
             this.btndelete.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btndelete.BackgroundImage")));
             this.btndelete.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.btndelete.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btndelete.Location = new System.Drawing.Point(718, 376);
+            this.btndelete.Location = new System.Drawing.Point(538, 306);
+            this.btndelete.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btndelete.Name = "btndelete";
-            this.btndelete.Size = new System.Drawing.Size(140, 63);
+            this.btndelete.Size = new System.Drawing.Size(105, 51);
             this.btndelete.TabIndex = 3;
             this.btndelete.UseVisualStyleBackColor = true;
             this.btndelete.Click += new System.EventHandler(this.btndelete_Click);
             // 
             // txtid
             // 
-            this.txtid.Location = new System.Drawing.Point(67, 42);
+            this.txtid.Location = new System.Drawing.Point(50, 34);
+            this.txtid.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.txtid.Name = "txtid";
-            this.txtid.Size = new System.Drawing.Size(342, 22);
+            this.txtid.Size = new System.Drawing.Size(258, 20);
             this.txtid.TabIndex = 4;
             // 
             // txtaddress
             // 
-            this.txtaddress.Location = new System.Drawing.Point(142, 93);
+            this.txtaddress.Location = new System.Drawing.Point(106, 76);
+            this.txtaddress.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.txtaddress.Name = "txtaddress";
-            this.txtaddress.Size = new System.Drawing.Size(426, 22);
+            this.txtaddress.Size = new System.Drawing.Size(320, 20);
             this.txtaddress.TabIndex = 5;
             // 
             // label1
@@ -148,9 +154,10 @@
             this.label1.BackColor = System.Drawing.Color.Teal;
             this.label1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.label1.ForeColor = System.Drawing.Color.Snow;
-            this.label1.Location = new System.Drawing.Point(25, 42);
+            this.label1.Location = new System.Drawing.Point(19, 34);
+            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(27, 19);
+            this.label1.Size = new System.Drawing.Size(23, 15);
             this.label1.TabIndex = 6;
             this.label1.Text = "ID:";
             // 
@@ -160,9 +167,10 @@
             this.label2.BackColor = System.Drawing.Color.Teal;
             this.label2.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.label2.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label2.Location = new System.Drawing.Point(25, 96);
+            this.label2.Location = new System.Drawing.Point(19, 78);
+            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(76, 19);
+            this.label2.Size = new System.Drawing.Size(61, 15);
             this.label2.TabIndex = 7;
             this.label2.Text = "ADDRESS";
             // 
@@ -178,9 +186,9 @@
             // 
             // Kho
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(928, 464);
+            this.ClientSize = new System.Drawing.Size(696, 377);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.txtaddress);
@@ -189,6 +197,7 @@
             this.Controls.Add(this.btnadd);
             this.Controls.Add(this.btnlist);
             this.Controls.Add(this.dgvlist);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "Kho";
             this.Text = "Kho";
             ((System.ComponentModel.ISupportInitialize)(this.dgvlist)).EndInit();

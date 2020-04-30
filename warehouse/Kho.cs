@@ -88,5 +88,6 @@ namespace warehouse
                 txtaddress.Text = row.Cells[1].Value.ToString();
             }
         }
+
     }
 }

@@ -77,12 +77,3 @@ insert into import_detail values (2, 4, 10);
 insert into import_detail values (1, 1, 90);
 insert into import_detail values (1, 4, 60);
 select * from import_detail;
-
-
-
-
-
-
-	
-
-
