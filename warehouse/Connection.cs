@@ -9,10 +9,10 @@ namespace warehouse
 {
     class Connection
     {
-        static string serverName = "DESKTOP-GCNSJFF";
+        static string serverName = "SAITO-PC\\SQLEXPRESS";
         static string tableName = "warehouse";
-        static string userName = "calavori";
-        static string password = "tumotden9";
+        static string userName = "mylogin";
+        static string password = "mylogin";
         public static SqlConnection conn;
 
         public static bool OpenConnection()
